@@ -1,1 +1,22 @@
+curl -x socks5h://127.0.0.1:1080 https://www.youtube.com/ -verbose -o g.html
 
+curl -x 127.0.0.1:8080 http://baidu.com/ -verbose
+
+curl -x socks5h://127.0.0.1:1080 -I https://www.youtube.com/ -verbose
+
+$env:RUST_BACKTRACE=1
+
+git rm -r --cached .
+
+git config --global http.proxy 'socks5://127.0.0.1:1080'
+git config --global https.proxy 'socks5://127.0.0.1:1080'
+
+git config --global --unset http.proxy
+
+[patch.crates-io]
+rich-strong-lib = { path = '../rich-strong-lib' }
+
+
+PubkeyAuthentication yes
+
+set mouse-=a
